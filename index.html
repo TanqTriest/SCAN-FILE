@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quét Văn Bản từ PDF & Ảnh</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1><i class="fa-solid fa-file-lines"></i> Quét Văn Bản từ PDF & Ảnh</h1>
+            <p class="subtitle">Đọc chữ từ file PDF · Nhận diện ký tự trong ảnh (OCR)</p>
+        </header>
+
+        <section id="scanner-section">
+            <div class="pane">
+                <div class="upload-area">
+                    <label for="file-upload" class="upload-btn">
+                        <i class="fa-solid fa-file-arrow-up"></i> Tải lên Ảnh / PDF
+                    </label>
+                    <input type="file" id="file-upload" accept="image/*, application/pdf">
+                    <span id="file-name">Chưa chọn file nào</span>
+                </div>
+
+                <div id="loading-ocr" class="status-msg hidden"><i class="fa-solid fa-spinner fa-spin"></i> <span id="loading-text">Đang xử lý file...</span></div>
+
+                <textarea id="result-text" placeholder="Văn bản quét được sẽ hiển thị ở đây..."></textarea>
+
+                <div class="pane-footer">
+                    <span id="char-count">0 ký tự</span>
+                    <div class="footer-actions">
+                        <button id="copy-btn" class="link-btn"><i class="fa-regular fa-copy"></i> Sao chép</button>
+                        <button id="clear-btn" class="link-btn"><i class="fa-solid fa-eraser"></i> Xóa</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; Designed & Developed by Tăng Triết. For educational purposes only.</p>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="script.js"></script>
+</body>
+</html>
